@@ -141,4 +141,105 @@ elif <condition>
 else: <condition>
     <indented code block>
       
--
+
+number = input('Please input your number: ')
+  7 
+  8     number = int(number)
+  9 
+ 10     if (number % 3 ==0) & (number % 5 ==0):
+ 11         print('fizzbuzz')
+ 12     elif number % 3==0:
+ 13         print('fizz')
+ 14     elif number % 5==0:
+ 15         print('buzz')
+ 16     else:
+ 17         print(str(number) + " is not divisible by 3 or 5.")
+
+        
+            FUNCTIONS
+        
+ -functions are used for a callback to make repetitive code much cleaner
+        def nameoffunction():
+            
+            <code block>
+            <you can use <pass> as a placeholder>
+            
+            <return> returns code from above statement feeds back up
+ 
+           LOOPS
+    
+  
+    FOR LOOPS
+                
+                my_list = ["tis", "is, "mu, "list"]
+                
+          for i in my_list:
+              ^
+           will cycle through each part of list (can be changed letters)
+           
+           range() function <start stop<will not hit that stop> step>
+           to make range readable turn it into a list
+           
+           fori in range(0,10):
+                print(i)
+    WHILE LOOPS
+           will continue looping until that conditional is false
+            you can also use the break statement if neccesary to end the loop prematurely  
+            
+                
+                print(i)
+
+                
+   1 #!/usr/bin/env python3
+  2 
+  3 def guess_number(n):
+  4     while True:
+  5         user = int(input("Enter number: "))
+  6         if user > n:
+  7             print("TOO HIGH")
+  8         elif user < n:
+  9             print("TOO LOW")
+ 10         else:
+ 11             print("WIN")
+ 12             return
+ 13 
+ 14 guess_number(23)
+
+                            
+ LIST SLICING SING A COLON
+                          
+    myList[0:10]   <will show the first 10 items
+    myList[-10:]   <will show last 10>
+    
+                
+   can also slice through strings
+   myStr [::-1]  <shortcut to reverse whatever list your in>
+   
+                use colon for [start:stop:step]
+         
+  
+    CHARACTERS
+                
+  myChr = 'a'
+  ord(myChr)
+  97
+                
+ ord only works on single value decimals.
+      
+can use <bin> on something to find the binary value of a given character.
+                
+                
+                
+bin(ord(myChr))
+      '0b1100001'
+format(ord(myChr), '0>8b')
+      '01100001'
+list(format(ord(myChr), '0>8b'))
+                <lists out bytes in a list>
+''.join(list(format(ord(myChr), '0>8b')))
+      '01100001'
+turn back into a character
+      int(''.join(list(format(ord(myChr), '0>8b'))), 2)
+                                                     ^
+                                               Turn on base2
+                   
