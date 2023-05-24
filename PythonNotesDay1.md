@@ -243,3 +243,72 @@ turn back into a character
                                                      ^
                                                Turn on base2
                    
+               #!/usr/bin/env python3
+ 80 
+ 81 def steg_encode_char(char, cover):
+ 82 
+ 83      msgbin = format(ord(char),'0>8b')
+ 84      coverbin = format(int(cover[0]),'0>8b')
+ 85      coverbinl = list(coverbin)
+ 86 
+ 87      for i in range(0,8):
+ 88         coverbinl = list(format(int(cover[i]),'0>8b'))
+ 89         coverbinl[-1] = msgbin[i]
+ 90         cover[i] = str(int(''.join(coverbinl),base=2))
+ 91      pass
+ 92 
+ 93 def steg_decode_char(stego):
+ 94 
+ 95     pass
+ 96     msgbits = []
+ 97 
+ 98     for bits in stego:
+ 99             msgbits.append(bin(int(bits))[-1])
+100 
+101     return chr(int(''.join(msgbits),base=2))
+102 
+103 if __name__ == '__main__':
+104     pass
+
+                    
+return chr(int(''.join([bin(int(b))[-1] for b in stego]),2))      <one liner>                    
+
+                    
+                    
+                    
+        FILE INPUT OUTPUT
+          
+ vim fileio.py
+        
+    fp = open('myfile.txt')
+    fp.close()                 <fp stands for file pointer>
+    python has a built in way to open and close files for oyu
+                    
+    with open('myfile.txt', 'r') as fp:
+                             ^
+                     stands for read
+                    
+    print(fp.read(<amount you want to read))
+               ^
+       will read the document as a huge string
+                   
+    other method called fp.readlines()
+                              ^
+                    every line is printed in a list
+                          
+                          
+    with open('myfile.txt', 'w') as fp:
+    fp.write('This is my new fil. But whre are the newlines?\n')   <have to add new lines>
+                    
+    fp.writelines('This\n' 'is\n', etc...)
+                   
+    copying a file
+                    
+    with open('myfile.txt', 'r') as fp0:
+                    with open('newfile.txt', 'w') as fp1:
+                        fp1.write(fp0.read())
+                    
+                    
+     with open('school_prompt.txt', 'r') as fp:
+    words = fp.read().split()
+    p_words = [word for word in words if 'p' in word]
