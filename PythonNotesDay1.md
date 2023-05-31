@@ -113,7 +113,7 @@ Day1Excercise Code
 \#!/usr/bin/python3
   2 
   3 email = input('Please input your email:')
-  4 
+  4 email
   5 
   6 name, secondhalf = email.split('@')
   7 middle, end = secondhalf.split('.')
@@ -612,3 +612,4 @@ Challenge: Using the file school_prompt.txt, if the character ‘p’ is in a wo
 
                               
  
+welel known ports = 0-1024
